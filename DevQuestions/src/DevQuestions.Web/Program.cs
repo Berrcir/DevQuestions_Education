@@ -1,7 +1,7 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using DevQuestions.Web;
 
-builder.Services.AddControllers();
-builder.Services.AddSwaggerGen();
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddProgramDependencies();
 
 var app = builder.Build();
 
