@@ -1,20 +1,30 @@
-﻿using DirectoryService.Presenters.Models.Questions;
+﻿using DevQuestions.Application.Questions;
+using DevQuestions.Contracts.Questions;
+using DevQuestions.Presenters.Questions.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DirectoryService.Presenters.Controllers
+namespace DevQuestions.Presenters.Questions.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class QuestionsController : ControllerBase
     {
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] QuestionCreateModel model, CancellationToken cancellationToken)
+        private readonly IQuestionsService _questionsService;
+
+        public QuestionsController(IQuestionsService questionsService)
         {
-            return Ok("Question created");
+            _questionsService = questionsService;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] QuestionCreateDto request, CancellationToken cancellationToken)
+        {
+            Guid questionId = await _questionsService.Create(request, cancellationToken);
+            return Ok(questionId);
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] QuestionsGetModel model, CancellationToken cancellationToken)
+        public async Task<IActionResult> Get([FromQuery] QuestionsGetDto request, CancellationToken cancellationToken)
         {
             return Ok("Questions got");
         }
@@ -28,7 +38,7 @@ namespace DirectoryService.Presenters.Controllers
         [HttpPut("{questionId:guid}")]
         public async Task<IActionResult> Update(
             [FromRoute] Guid questionId,
-            [FromBody] QuestionUpdateModel model,
+            [FromBody] QuestionUpdateDto request,
             CancellationToken cancellationToken)
         {
             return Ok("Question updated");
@@ -52,7 +62,7 @@ namespace DirectoryService.Presenters.Controllers
         [HttpPost("{questionId:guid}/answers")]
         public async Task<IActionResult> AddAnswer(
             [FromRoute] Guid questionId,
-            [FromBody] AnswerAddModel model,
+            [FromBody] AnswerAddDto request,
             CancellationToken cancellationToken)
         {
             return Ok("Answer added");
