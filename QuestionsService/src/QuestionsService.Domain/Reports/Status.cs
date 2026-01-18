@@ -11,6 +11,6 @@ namespace DirectoryService.Domain.Reports
         Open,
         InProgress,
         Resolved,
-        Dismissed
+        Dismissed,
     }
 }
