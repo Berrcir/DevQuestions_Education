@@ -10,7 +10,7 @@ namespace DevQuestions.Application.Questions
 
         public Task<bool> DeleteAsync(Guid questionId, CancellationToken cancellationToken);
 
-        public Task<Question> GetByIdAsync(Guid questionId, CancellationToken cancellationToken);
+        public Task<Question?> GetByIdAsync(Guid questionId, CancellationToken cancellationToken);
 
         public Task<int> GetOpenUserQuestionsAsync(Guid userId, CancellationToken cancellationToken);
     }
