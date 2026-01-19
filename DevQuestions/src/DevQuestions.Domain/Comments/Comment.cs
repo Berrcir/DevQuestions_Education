@@ -1,4 +1,4 @@
-﻿namespace DirectoryService.Domain.Comments
+﻿namespace DevQuestions.Domain.Comments
 {
     public class Comment
     {
