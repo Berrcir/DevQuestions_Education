@@ -1,4 +1,4 @@
-﻿namespace DirectoryService.Domain.Questions
+﻿namespace DevQuestions.Domain.Questions
 {
     public class Answer
     {

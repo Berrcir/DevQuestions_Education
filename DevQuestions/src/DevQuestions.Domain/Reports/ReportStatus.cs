@@ -1,4 +1,4 @@
-﻿namespace DirectoryService.Domain.Reports
+﻿namespace DevQuestions.Domain.Reports
 {
     public enum ReportStatus
     {

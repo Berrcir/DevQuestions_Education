@@ -1,5 +1,5 @@
 ﻿using DevQuestions.Application.Questions;
-using DirectoryService.Domain.Questions;
+using DevQuestions.Domain.Questions;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevQuestions.Infrastructure.PostgreSql.Repositories
@@ -20,10 +20,10 @@ namespace DevQuestions.Infrastructure.PostgreSql.Repositories
             return question.Id;
         }
 
-        public Task<bool> DeleteAsync(Guid questionId, CancellationToken cancellationToken)
-        {
+        //public Task<bool> DeleteAsync(Guid questionId, CancellationToken cancellationToken)
+        //{
 
-        }
+        //}
 
         public async Task<Question?> GetByIdAsync(Guid questionId, CancellationToken cancellationToken)
         {
@@ -35,14 +35,15 @@ namespace DevQuestions.Infrastructure.PostgreSql.Repositories
             return question;
         }
 
-        public Task<int> GetOpenUserQuestionsAsync(Guid userId, CancellationToken cancellationToken)
+        public async Task<int> GetOpenUserQuestionsAsync(Guid userId, CancellationToken cancellationToken)
         {
 
+            return _dbContext.Questions.Count(q => q.Status == QuestionStatus.Open);
         }
 
-        public Task<Guid> SaveAsync(Question question, CancellationToken cancellationToken)
-        {
+        //public Task<Guid> SaveAsync(Question question, CancellationToken cancellationToken)
+        //{
 
-        }
+        //}
     }
 }

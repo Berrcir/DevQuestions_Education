@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using DevQuestions.Domain.Questions;
 
-namespace DirectoryService.Domain.Questions
+namespace DevQuestions.Domain.Questions
 {
     public class Question
     {

@@ -1,6 +1,5 @@
 ﻿using DevQuestions.Application.Questions;
 using DevQuestions.Contracts.Questions;
-using DevQuestions.Presenters.Questions.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevQuestions.Presenters.Questions.Controllers

@@ -1,4 +1,4 @@
-﻿using DirectoryService.Domain.Questions;
+﻿using DevQuestions.Domain.Questions;
 
 namespace DevQuestions.Application.Questions
 {
@@ -6,11 +6,11 @@ namespace DevQuestions.Application.Questions
     {
         public Task<Guid> AddAsync(Question question, CancellationToken cancellationToken);
 
-        public Task<Guid> SaveAsync(Question question, CancellationToken cancellationToken);
+        //public Task<Guid> SaveAsync(Question question, CancellationToken cancellationToken);
 
-        public Task<bool> DeleteAsync(Guid questionId, CancellationToken cancellationToken);
+        //public Task<bool> DeleteAsync(Guid questionId, CancellationToken cancellationToken);
 
-        public Task<Question?> GetByIdAsync(Guid questionId, CancellationToken cancellationToken);
+        //public Task<Question?> GetByIdAsync(Guid questionId, CancellationToken cancellationToken);
 
         public Task<int> GetOpenUserQuestionsAsync(Guid userId, CancellationToken cancellationToken);
     }

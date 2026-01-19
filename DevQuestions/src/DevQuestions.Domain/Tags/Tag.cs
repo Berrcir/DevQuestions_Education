@@ -1,4 +1,4 @@
-﻿namespace DirectoryService.Domain.Tags
+﻿namespace DevQuestions.Domain.Tags
 {
     public record class Tag
     {

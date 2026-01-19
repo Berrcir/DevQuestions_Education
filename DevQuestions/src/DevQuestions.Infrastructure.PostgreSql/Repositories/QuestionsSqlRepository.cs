@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using DevQuestions.Application.Questions;
-using DirectoryService.Domain.Questions;
+using DevQuestions.Domain.Questions;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
 
@@ -37,24 +37,26 @@ namespace DevQuestions.Infrastructure.PostgreSql.Repositories
             return question.Id;
         }
 
-        public Task<bool> DeleteAsync(Guid questionId, CancellationToken cancellationToken)
-        {
+        //public Task<bool> DeleteAsync(Guid questionId, CancellationToken cancellationToken)
+        //{
 
-        }
+        //}
 
-        public Task<Question> GetByIdAsync(Guid questionId, CancellationToken cancellationToken)
-        {
+        //public Task<Question> GetByIdAsync(Guid questionId, CancellationToken cancellationToken)
+        //{
 
-        }
+        //}
 
         public Task<int> GetOpenUserQuestionsAsync(Guid userId, CancellationToken cancellationToken)
         {
+            Thread.Sleep(1000);
 
+            return Task.FromResult(0);
         }
 
-        public Task<Guid> SaveAsync(Question question, CancellationToken cancellationToken)
-        {
+        //public Task<Guid> SaveAsync(Question question, CancellationToken cancellationToken)
+        //{
 
-        }
+        //}
     }
 }
