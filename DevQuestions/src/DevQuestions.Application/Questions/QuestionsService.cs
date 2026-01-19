@@ -1,5 +1,6 @@
-﻿using DevQuestions.Contracts.Questions;
-using DirectoryService.Domain.Questions;
+﻿using DevQuestions.Application.Questions.Exceptions;
+using DevQuestions.Contracts.Questions;
+using DevQuestions.Domain.Questions;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.Extensions.Logging;
@@ -29,7 +30,7 @@ namespace DevQuestions.Application.Questions
 
             if (!validationResult.IsValid)
             {
-                throw new ValidationException(validationResult.Errors);
+                throw new QuestionValidationException(validationResult.Errors.Select(e => e.ErrorMessage));
             }
 
             // Валидация бизнес-логики
@@ -38,7 +39,7 @@ namespace DevQuestions.Application.Questions
 
             if (openUserQuestionsCount > 3)
             {
-                throw new Exception("Пользователь не может открыть больше 3х вопросов");
+                throw new QuestionValidationException("Пользователь не может открыть больше 3х вопросов");
             }
 
             Guid questionId = Guid.NewGuid();

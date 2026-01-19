@@ -1,4 +1,4 @@
-﻿using DirectoryService.Domain.Questions;
+﻿using DevQuestions.Domain.Questions;
 using Microsoft.EntityFrameworkCore;
 
 namespace DevQuestions.Infrastructure.PostgreSql
