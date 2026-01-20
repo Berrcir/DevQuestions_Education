@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevQuestions.Application", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevQuestions.Infrastructure.PostgreSql", "src\DevQuestions.Infrastructure.PostgreSql\DevQuestions.Infrastructure.PostgreSql.csproj", "{D25AB187-5A2F-4C4E-947E-6816D0A89B69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src\Shared\Shared.csproj", "{D4AC1112-6E90-4612-BC21-C9C3B20D9572}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{D25AB187-5A2F-4C4E-947E-6816D0A89B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25AB187-5A2F-4C4E-947E-6816D0A89B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25AB187-5A2F-4C4E-947E-6816D0A89B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4AC1112-6E90-4612-BC21-C9C3B20D9572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AC1112-6E90-4612-BC21-C9C3B20D9572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AC1112-6E90-4612-BC21-C9C3B20D9572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AC1112-6E90-4612-BC21-C9C3B20D9572}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{28C8317F-FE67-49E5-A328-97C145FB1267} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{B4AB85BE-F905-457B-84C6-3F0D17557A63} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{D25AB187-5A2F-4C4E-947E-6816D0A89B69} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{D4AC1112-6E90-4612-BC21-C9C3B20D9572} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5E73C81E-63E7-4C7E-9287-CBA4077DCAEF}
