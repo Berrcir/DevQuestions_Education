@@ -1,4 +1,5 @@
-﻿using DevQuestions.Application.Exceptions;
+﻿using CSharpFunctionalExtensions;
+using DevQuestions.Application.Exceptions;
 using Shared;
 using System.Text.Json;
 
