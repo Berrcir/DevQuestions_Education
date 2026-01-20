@@ -1,9 +1,12 @@
-﻿namespace DevQuestions.Application.Exceptions
+﻿using Shared;
+using System.Text.Json;
+
+namespace DevQuestions.Application.Exceptions
 {
-    public class NotFoundException<T> : Exception
+    public class NotFoundException : Exception
     {
-        protected NotFoundException(Guid id)
-            : base($"{nameof(T)} with id: {id} not found")
+        protected NotFoundException(IEnumerable<Error> errors)
+            : base(JsonSerializer.Serialize(errors))
         {
         }
     }
