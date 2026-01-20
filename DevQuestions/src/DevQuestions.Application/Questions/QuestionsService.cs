@@ -1,10 +1,12 @@
-﻿using DevQuestions.Application.Extensions;
+﻿using CSharpFunctionalExtensions;
+using DevQuestions.Application.Extensions;
 using DevQuestions.Application.Questions.Fails.Exceptions;
 using DevQuestions.Contracts.Questions;
 using DevQuestions.Domain.Questions;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.Extensions.Logging;
+using Shared;
 
 namespace DevQuestions.Application.Questions
 {
@@ -24,14 +26,16 @@ namespace DevQuestions.Application.Questions
             _logger = logger;
         }
 
-        public async Task<Guid> Create(QuestionCreateDto questionDto, CancellationToken cancellationToken)
+        public async Task<Result<Guid, Error[]>> Create(QuestionCreateDto questionDto, CancellationToken cancellationToken)
         {
             // Валидация входного DTO
             ValidationResult validationResult = await _validator.ValidateAsync(questionDto, cancellationToken);
 
             if (!validationResult.IsValid)
             {
-                throw new QuestionValidationException(validationResult.ToErrors());
+                return validationResult.ToErrors().ToArray();
+
+                //throw new QuestionValidationException(validationResult.ToErrors());
             }
 
             // Валидация бизнес-логики
