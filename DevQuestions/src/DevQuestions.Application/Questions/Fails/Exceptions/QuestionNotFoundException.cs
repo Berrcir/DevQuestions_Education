@@ -6,8 +6,8 @@ namespace DevQuestions.Application.Questions.Fails.Exceptions
 {
     public class QuestionNotFoundException : NotFoundException
     {
-        public QuestionNotFoundException(IEnumerable<Error> errors)
-            : base(errors)
+        public QuestionNotFoundException(Guid id)
+            : base([Errors.Questions.NotFound(id)])
         {
         }
     }

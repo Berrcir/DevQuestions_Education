@@ -13,7 +13,7 @@ namespace DevQuestions.Domain.Questions
 
         public required Guid UserId { get; set; }
 
-        public IEnumerable<Answer> Answers { get; set; } = [];
+        public List<Answer> Answers { get; set; } = [];
 
         public Answer? Solution { get; set; }
 

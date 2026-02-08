@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace DevQuestions.Application.Questions.Validators
 {
-    public class QuestionCreateDtoValidator : AbstractValidator<QuestionCreateDto>
+    public class CreateQuestionDtoValidator : AbstractValidator<CreateQuestionDto>
     {
-        public QuestionCreateDtoValidator()
+        public CreateQuestionDtoValidator()
         {
             RuleFor(x => x.Title)
                 .NotEmpty()
