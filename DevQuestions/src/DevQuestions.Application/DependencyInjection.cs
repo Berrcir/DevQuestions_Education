@@ -11,7 +11,7 @@ namespace DevQuestions.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             // services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddScoped<IValidator<QuestionCreateDto>, QuestionCreateDtoValidator>();
+            services.AddScoped<IValidator<CreateQuestionDto>, CreateQuestionDtoValidator>();
             services.AddScoped<IQuestionsService, QuestionsService>();
 
             return services;

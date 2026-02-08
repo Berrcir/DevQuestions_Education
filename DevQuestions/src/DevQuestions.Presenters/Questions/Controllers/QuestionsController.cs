@@ -17,7 +17,7 @@ namespace DevQuestions.Presenters.Questions.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] QuestionCreateDto request, CancellationToken cancellationToken)
+        public async Task<IActionResult> Create([FromBody] CreateQuestionDto request, CancellationToken cancellationToken)
         {
             var result = await _questionsService.Create(request, cancellationToken);
 
@@ -25,7 +25,7 @@ namespace DevQuestions.Presenters.Questions.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] QuestionsGetDto request, CancellationToken cancellationToken)
+        public async Task<IActionResult> Get([FromQuery] GetQuestionsDto request, CancellationToken cancellationToken)
         {
             return Ok("Questions got");
         }
@@ -39,7 +39,7 @@ namespace DevQuestions.Presenters.Questions.Controllers
         [HttpPut("{questionId:guid}")]
         public async Task<IActionResult> Update(
             [FromRoute] Guid questionId,
-            [FromBody] QuestionUpdateDto request,
+            [FromBody] UpdateQuestionDto request,
             CancellationToken cancellationToken)
         {
             return Ok("Question updated");
@@ -63,7 +63,7 @@ namespace DevQuestions.Presenters.Questions.Controllers
         [HttpPost("{questionId:guid}/answers")]
         public async Task<IActionResult> AddAnswer(
             [FromRoute] Guid questionId,
-            [FromBody] AnswerAddDto request,
+            [FromBody] AddAnswerDto request,
             CancellationToken cancellationToken)
         {
             return Ok("Answer added");

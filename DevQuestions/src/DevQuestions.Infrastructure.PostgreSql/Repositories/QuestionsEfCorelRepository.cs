@@ -41,9 +41,10 @@ namespace DevQuestions.Infrastructure.PostgreSql.Repositories
             return _dbContext.Questions.Count(q => q.Status == QuestionStatus.Open);
         }
 
-        //public Task<Guid> SaveAsync(Question question, CancellationToken cancellationToken)
-        //{
-
-        //}
+        public async Task SaveAsync(Question question, CancellationToken cancellationToken)
+        {
+            _dbContext.Questions.Attach(question);
+            await _dbContext.SaveChangesAsync(cancellationToken);
+        }
     }
 }
